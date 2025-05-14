@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//schema
 const postSchema = new mongoose.Schema({
 	title: {
 		type: String,
@@ -8,13 +9,10 @@ const postSchema = new mongoose.Schema({
 	description: {
 		type: String,
 		required: false
-	},
-	price: {
-		type: Number,
-		required: true
 	}
 });
 
+//model
 const Post = mongoose.model("posts", postSchema);
 
 module.exports = Post;
