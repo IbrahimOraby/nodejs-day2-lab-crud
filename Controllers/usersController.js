@@ -85,7 +85,17 @@ const login = async (req, res) => {
 	});
 };
 
+const getAllUsers = async (req, res) => {
+  const users = await User.find();
+  res.json({
+    message: "users fetched successfully",
+    status: "success",
+    data: users,
+  });
+};
+
 module.exports = {
 	signup,
-	login
+	login,
+    getAllUsers
 };
