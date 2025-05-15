@@ -1,4 +1,3 @@
-const User = require("../../../demo/models/usersModel");
 const Post = require("../Models/postSchema");
 
 //post

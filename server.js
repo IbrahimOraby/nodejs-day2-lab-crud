@@ -2,9 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
-const postsRouter = require("./Routers/postsRoutes");
+const dotenv = require("dotenv");
 
-// const port = 3000;
+const postsRouter = require("./Routers/postsRoutes");
+const usersRouter = require("./Routers/usersRoutes");
+
+dotenv.config();
+
 const app = express();
 
 app.use(cors());
@@ -12,6 +16,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use("/api/v1/posts", postsRouter);
+app.use("/api/v1/users", usersRouter);
 
 app.listen(3000, () => {
 	console.log("server is running on port 3000");
